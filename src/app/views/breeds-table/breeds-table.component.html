@@ -1,7 +1,7 @@
 <div class="container">
     <h1>Tabla de Razas de Gatos</h1>
     <div class="form-group">
-      <input type="text" class="form-control" (ngModel)="dataFilled" placeholder="Buscar..." (input)="onSearch()">
+      <input type="text" class="form-control" (ngModel)="dataFilled" placeholder="Buscar..." (input)="onSearch($event)">
     </div>
   
     <table class="table">

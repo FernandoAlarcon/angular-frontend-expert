@@ -20,7 +20,9 @@ export class BreedsTableComponent implements OnInit {
     });
   }
 
-  onSearch(): void {
-    this.filteredBreeds = this.breeds.filter(breed => breed.name.toLowerCase().includes(this.dataFilled.toLowerCase()));
+  onSearch(value: any): void {
+    
+    let dataSelect = value.target.value; 
+    this.filteredBreeds = this.breeds.filter(breed => breed.name.toLowerCase().includes(dataSelect.toLowerCase()));
   }
 }

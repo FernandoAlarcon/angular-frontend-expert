@@ -20,15 +20,16 @@ export class BreedsSelectorComponent implements OnInit {
     });
   }
 
-  onBreedChange(): void {
+  onBreedChange(value: any): void {
+ 
+    let dataSelect = value.target.value; 
 
-
-
-    this.breedsService.getBreedById(this.breedId).subscribe((data: any) => {
+    this.breedsService.getBreedById(dataSelect).subscribe((data: any) => {
       this.selectedBreed = data;
-      this.breedsService.getImagesByBreedId(this.breedId).subscribe((images: any) => {
+      this.breedsService.getImagesByBreedId(dataSelect).subscribe((images: any) => {
         this.images = images;
       });
     });
-  }
+  }// onBreedChange
+
 }

@@ -2,7 +2,7 @@
     <h1>Selecciona una Raza de Gato</h1>
     <div class="form-group">
       <label for="breedSelect">Raza:</label>
-      <select id="breedSelect" class="form-control" (ngModel)="breedId" (change)="onBreedChange()">
+      <select id="breedSelect" class="form-control" (ngModel)="breedId" (change)="onBreedChange($event)">
         <option *ngFor="let breed of breeds" [value]="breed.id">{{ breed.name }}</option>
       </select>
     </div>
