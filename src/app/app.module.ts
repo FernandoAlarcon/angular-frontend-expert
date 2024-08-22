@@ -12,7 +12,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NavbarComponent } from './navbar/navbar.component'; // Importa el módulo del carrusel
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms'; // Importa FormsModule
 
 
 @NgModule({
@@ -30,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
+    FormsModule,  // Asegúrate de incluir FormsModule aquí
     CarouselModule.forRoot() // Añade el módulo a los imports
   ],
   providers: [],

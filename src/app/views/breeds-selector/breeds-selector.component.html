@@ -1,20 +1,22 @@
 <div class="container">
     <h1>Selecciona una Raza de Gato</h1>
     <div class="form-group">
-      <label for="breedSelect">Raza:</label>
+      <label for="breedSelect">Raza:</label><br>
+
       <select id="breedSelect" class="form-control" (ngModel)="breedId" (change)="onBreedChange($event)">
         <option *ngFor="let breed of breeds" [value]="breed.id">{{ breed.name }}</option>
       </select>
+      <br/>
     </div>
   
     <div *ngIf="selectedBreed">
-        <h2>{{ selectedBreed.name }}</h2>
-        <carousel>
-          <ng-template carouselSlide *ngFor="let image of images">
-            <img [src]="image.url" alt="{{ selectedBreed.name }}" class="img-fluid">
-          </ng-template>
-        </carousel>
+        <h2>{{ selectedBreed.name }}</h2> 
+         
         <p>{{ selectedBreed.description }}</p>
+    </div> 
+    
+    <div *ngIf="!selectedBreed">
+         Escoge una raza
     </div>
 
   </div>

@@ -5,7 +5,7 @@ import { BreedsTableComponent } from './views/breeds-table/breeds-table.componen
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { UserInfoComponent } from './views/user-info/user-info.component';
-import { AuthGuard } from './guards/auth.guard';  // Asegúrate de que AuthGuard esté bien implementado
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/breeds-selector', pathMatch: 'full' },

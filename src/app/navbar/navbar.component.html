@@ -1,10 +1,15 @@
 <nav>
     <ul>
-      <li><a routerLink="/breeds-selector" routerLinkActive="active">Razas de Gatos</a></li>
-      <li><a routerLink="/breeds-table" routerLinkActive="active">Tabla de Razas</a></li>
-      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-      <li><a routerLink="/register" routerLinkActive="active">Registro</a></li>
-      <li><a routerLink="/user-info" routerLinkActive="active">Información del Usuario</a></li>
+      <li><a *ngIf="isLoggedIn" routerLink="/breeds-selector" routerLinkActive="active">Razas de Gatos</a></li>
+      <li><a *ngIf="isLoggedIn" routerLink="/breeds-table" routerLinkActive="active">Tabla de Razas</a></li>
+  
+      <!-- Mostrar solo si el usuario no está autenticado -->
+      <li *ngIf="!isLoggedIn"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li *ngIf="!isLoggedIn"><a routerLink="/register" routerLinkActive="active">Registro</a></li>
+  
+      <!-- Mostrar solo si el usuario está autenticado -->
+      <li *ngIf="isLoggedIn"><a routerLink="/user-info" routerLinkActive="active">Información del Usuario</a></li>
+      <li *ngIf="isLoggedIn"><a (click)="logout()">Cerrar Sesión</a></li>
     </ul>
   </nav>
   

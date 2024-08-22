@@ -8,17 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  username = '';
+  email = '';
   password = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
   login(): void {
-    this.authService.login(this.username, this.password).subscribe(
+
+    this.authService.login(this.email, this.password).subscribe(
       (response) => {
-        if (response.success) {
+ 
+        if (response) {
+          // Guarda la información del usuario en localStorage
+          localStorage.setItem('user', JSON.stringify(response));
+          
+          // Guarda el estado de login en el servicio de autenticación
           this.authService.setLoginStatus(true);
-          this.router.navigate(['/user-info']);
+ 
+
+  
+          // Navega a la página de información del usuario
+          //this.router.navigate(['/user-info']);
+
+          this.router.navigate(['/breeds-selector']);
+
         } else {
           alert('Login failed');
         }
